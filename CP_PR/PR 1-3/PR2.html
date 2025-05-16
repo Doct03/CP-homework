@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR2</title>
+</head>
+<body>
+    <script>
+//#1 Завдання
+      let user = {}; 
+      console.log(user);
+      user.name = "Марк";
+      user.surname = "Сміт";
+      console.log(user);
+      user.name = "Тарас";
+      console.log(user);
+      delete user.name;
+      console.log(user);
+
+//#2 Завдання
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+
+//#3 Завдання
+
+let salaries = {
+    Jarik: 1000,
+    Anna: 1600,
+    Miko: 1300
+};
+    let sum = 0;
+for (let key in salaries) {
+    sum += salaries[key];
+}
+console.log("Сума зарплат:", sum);
+
+//#4 Завдання
+
+function multiplyNumeric(obj) {
+        for (let key in obj) {
+          if (typeof obj[key] === 'number') {
+            obj[key] *= 2;
+          }
+        }
+      }
+
+      let menu = {
+        width: 200,
+        height: 3000,
+        title: "My menu"
+      };
+      console.log("До множення:", menu);
+      multiplyNumeric(menu);
+      console.log("Після множення:", menu);
+    
+
+    </script>
+</body>
+</html>

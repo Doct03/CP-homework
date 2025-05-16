@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>PR1</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <h4>login: Admin, password: Admin</h4>
+  <button onclick="loginCheck()">Увійти</button>
+
+  <script>
+    function loginCheck() {
+      let login = prompt("Введіть логін:");
+
+      if (login === "Admin") {
+        let password = prompt("Введіть пароль:");
+
+        if (password === "Admin") {
+          alert("Ласкаво просимо!");
+        } else if (password === "" || password === null) {
+          alert("Скасовано");
+        } else {
+          alert("Неправильний пароль");
+        }
+
+      } else if (login === "" || login === null) {
+        alert("Скасовано");
+      } else {
+        alert("Я вас не знаю");
+      }
+    }
+  </script>
+</body>
+</html>
