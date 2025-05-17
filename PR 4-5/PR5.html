@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR5</title>
+</head>
+<body>
+     <script>
+
+      //#1 Завдання
+      let styles = ["Jazz", "Blues"];
+      console.log(styles);
+
+      styles.push("Rock-n-Roll");
+      console.log(styles);
+
+      let middleIndex = Math.floor(styles.length / 2);
+      styles[middleIndex] = "Classics";
+      console.log(styles);
+
+      let first = styles.shift();
+      console.log("Видалено перший елемент:", first);
+      console.log(styles);
+
+      styles.unshift("Rap", "Reggae");
+      console.log(styles);
+
+      //#2 Завдання
+      function sumInput() {
+        let numbers = [];
+        while (true) {
+          let value = prompt("Введіть число:", "");
+          if (value === null || value.trim() === "" || isNaN(value)) break;
+          numbers.push(+value);
+        }
+        let sum = 0;
+        for (let num of numbers) {
+          sum += num;
+        }
+        return sum;
+      }
+
+      
+      console.log("Сума введених чисел:", sumInput());
+
+      //#3 Завдання
+      function getMaxSubSum(arr) {
+        let maxSum = 0;
+        let partialSum = 0;
+        for (let item of arr) {
+          partialSum += item;
+          if (partialSum > maxSum) maxSum = partialSum;
+          if (partialSum < 0) partialSum = 0;
+        }
+        return maxSum;
+      }
+
+      let testArr1 = [1, -2, 3, 4, -9, 6];
+      let testArr2 = [-1, -2, -3];
+      console.log("Максимальний підмасив testArr1:", getMaxSubSum(testArr1)); // 7
+      console.log("Максимальний підмасив testArr2:", getMaxSubSum(testArr2)); // 0
+  </script>
+</body>
+</html>

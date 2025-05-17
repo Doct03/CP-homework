@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR4</title>
+</head>
+<body>
+     <script>
+
+      //#1 Завдання
+      function ucFirst(str) {
+        if (!str) return str;
+        return str[0].toUpperCase() + str.slice(1);
+      }
+      console.log(ucFirst("привіт")); 
+
+
+      console.log(ucFirst("привіт")); 
+      console.log(ucFirst(""));        
+      console.log(ucFirst("hello"));   
+
+        //#2 Завдання 
+        function checkSpam(str) {
+            const lowerStr = str.toLowerCase();
+            return lowerStr.includes('росі') || lowerStr.includes('xxx');
+        }
+
+        console.log(checkSpam('Це повідомлення містить росі')); 
+        console.log(checkSpam('Тут немає спаму')); 
+        console.log(checkSpam('Тут є XXX')); 
+
+  
+        //#3 Завдання
+      function truncate(str, maxlength) {
+        return str.length > maxlength ? str.slice(0, maxlength - 1) + "…" : str;
+      }
+      console.log(truncate("тесттесттесттесттесттесттесттест", 10));
+      console.log(truncate("тест", 10));              
+
+        //#4 Завдання
+      function strikeStr(str) {
+        const words = str.trim().split(/\s+/);
+        if (words.length > 3) {
+          return words.slice(0, 3).join(" ") + "\n" + words.slice(3).join(" ");
+        }
+        return str;
+      }
+      console.log(strikeStr("тест тест тест тест тест тест тест тест")); 
+      console.log(strikeStr("тест тест тест"));  
+    
+  </script>
+</body>
+</html>
