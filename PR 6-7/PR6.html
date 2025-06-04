@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR6</title>
+    <script>
+        function unique(arr) {
+            return [...new Set(arr)];
+        }
+        function aclean(arr) {
+            let map = new Map();
+            for (let word of arr) {
+                let sorted = word.toLowerCase().split("").sort().join("");
+                map.set(sorted, word);
+            }
+            return Array.from(map.values());
+        }
+        function countOccurrences(arr) {
+            let map = new Map();
+            arr.forEach(num => {
+                map.set(num, (map.get(num) || 0) + 1);
+            });
+            return map;
+        }
+        function isUnique(arr) {
+            return new Set(arr).size === arr.length;
+        }
+        console.log(unique([1, 2, 2, 3, 4, 4, 5])); // [1, 2, 3, 4, 5]
+        console.log(aclean(["кот", "ток", "окт", "дом", "мод"])); // ["кот", "дом"]
+        console.log(countOccurrences([1, 2, 2, 3, 3, 3, 4])); // Map { 1 => 1, 2 => 2, 3 => 3, 4 => 1 }
+        console.log(isUnique([1, 2, 3, 4, 5])); // true
+        console.log(isUnique([1, 2, 2, 3, 4])); // false
+    </script>
+</head>
+<body>
+    <h1>PR6</h1>
+    <p>F12 for console</p>
+</body>
+</html>

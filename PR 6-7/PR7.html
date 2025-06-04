@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR7</title>
+    <script>
+
+        function sumSalaries(salaries) {
+            let sum = 0;
+            for (let salary of Object.values(salaries)) {
+                sum += salary;
+            }
+            return sum;
+        }
+        function count(obj) {
+            return Object.keys(obj).length;
+        }
+
+        let user = { name: "Іван", years: 25 };
+        let { name, years: age, isAdmin = false } = user;
+
+        console.log("Завдання 1:", sumSalaries({ John: 1000, Ann: 1500, Pete: 2000 }));
+        console.log("Завдання 2:", count({ name: "Іван", age: 25, city: "Київ" })); 
+        console.log("Завдання 3:", name, age, isAdmin); 
+    </script>
+</head>
+<body>
+    <h1>PR7</h1>
+    <p>F12 For console.</p>
+</body>
+</html>
